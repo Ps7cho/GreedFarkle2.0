@@ -25,16 +25,11 @@ if EditRoom {
 	if mouse_check_button_pressed(mb_left) or device_mouse_check_button_pressed(0,mb_left){	
 		var Done = collision_point(mouse_x,mouse_y,objDone,false,true);
 		if Done {
-				//recive text from typing
-			var text = keyboard_string;
-				//replace name value with text 
-			ds_list_replace(playerNames,pos,text);// (from startmenu Editbutton)
-				//return to lobby
-			EditRoom = false;
-			lobby = true;
-			instance_deactivate_layer("EditRoom");
-			instance_activate_layer("Lobby");
+			DoneTyping();
 		}
+	}
+	if keyboard_check_pressed(vk_enter){
+		DoneTyping();	
 	}
 }
 		#endregion

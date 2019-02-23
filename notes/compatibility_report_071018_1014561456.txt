@@ -1,0 +1,5 @@
+Converting GML script: ${project_dir}\scripts\ease_inout_elastic\ease_inout_elastic.gml
+Converted description /// @description ease_inout_elastic(time, start, change, duration)/// @param time
+/// @param  start
+/// @param  change
+/// @param  duration

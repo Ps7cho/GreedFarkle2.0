@@ -94,6 +94,7 @@ if startMenu {
 		}
 		var AddAI = collision_point(mouse_x,mouse_y,objAddAI,false,true);
 		if AddAI {
+			numbPlayers = Approach(numbPlayers,10,1);
 			numbAI = Approach(numbAI,numbPlayers-1,1);
 		}
 		var RemoveAI = collision_point(mouse_x,mouse_y,objRemoveAI,false,true);

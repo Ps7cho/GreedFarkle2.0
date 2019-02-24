@@ -52,13 +52,15 @@ if mouse_check_button_pressed(mb_left) || device_mouse_check_button_pressed(0,mb
 #endregion
 		#region buttons
 if mouse_check_button_pressed(mb_left) or device_mouse_check_button_pressed(0,mb_left){
-	var pass = collision_point(mouse_x,mouse_y,objPass,false,true);
-	if pass {
-		Pass();
-	}
-	var fresh = collision_point(mouse_x,mouse_y,objFresh,false,true);
-	if fresh{
-		FreshHand();
+	if !currentPlayer.AI {
+		var pass = collision_point(mouse_x,mouse_y,objPass,false,true);
+		if pass {
+			Pass();
+		}
+		var fresh = collision_point(mouse_x,mouse_y,objFresh,false,true);
+		if fresh{
+			FreshHand();
+		}
 	}
 	var exitbutton = collision_point(mouse_x, mouse_y, objExcapeButton,false,true);
 	if exitbutton {

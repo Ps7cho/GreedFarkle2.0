@@ -15,7 +15,6 @@ mint = make_color_rgb(10,255,198);
 
 
 ds_list_add(colors, purple);
-ds_list_add(colors, coral);
 ds_list_add(colors, orange);
 ds_list_add(colors, pink);
 ds_list_add(colors, yellow);
@@ -24,3 +23,4 @@ ds_list_add(colors, teal);
 ds_list_add(colors, beige);
 ds_list_add(colors, red);
 ds_list_add(colors, mint);
+ds_list_add(colors, coral);

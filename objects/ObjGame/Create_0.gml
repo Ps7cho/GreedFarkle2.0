@@ -2,7 +2,7 @@ randomize();
 Hand = ds_list_create();
 
 globalvar numbDice, numbFrozen, numbPlayers, numbAI, Points, roundPoints, threshold, winningTotal,
-block, currentPlayer, startMenu, OptionMenu, Setup, Name, WinnerColor, textColor;
+block, currentPlayer, startMenu, OptionMenu, Setup, Name, WinnerColor, textColor, Wins, scores;
 
 
 numbDice = 5;
@@ -34,6 +34,8 @@ Passed = false;
 pass = true;
 bustState = false;
 Win = noone;
+Wins = ds_map_create();
+scores = ds_list_create();
 AISelectPoints = 0;
 AiChooseTurn = -1;
 bustTimer1 = -1;

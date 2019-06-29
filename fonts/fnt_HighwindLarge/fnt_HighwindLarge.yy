@@ -1,7 +1,7 @@
 {
     "id": "6217498c-ad43-4072-9002-4c05e31a81e8",
     "modelName": "GMFont",
-    "mvc": "1.0",
+    "mvc": "1.1",
     "name": "fnt_HighwindLarge",
     "AntiAlias": 1,
     "TTFName": "",
@@ -10,6 +10,7 @@
     "charset": 0,
     "first": 0,
     "fontName": "Highwind",
+    "glyphOperations": 0,
     "glyphs": [
         {
             "Key": 32,
@@ -1437,8 +1438,9 @@
             }
         }
     ],
-    "image": null,
+    "hinting": 0,
     "includeTTF": false,
+    "interpreter": 0,
     "italic": false,
     "kerningPairs": [
         {
@@ -25043,6 +25045,8 @@
         }
     ],
     "last": 0,
+    "maintainGms1Font": false,
+    "pointRounding": 0,
     "ranges": [
         {
             "x": 32,

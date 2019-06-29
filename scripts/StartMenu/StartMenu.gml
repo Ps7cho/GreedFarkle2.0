@@ -77,6 +77,9 @@ if startMenu {
 		if Play {
 			instance_deactivate_layer("Lobby");
 			saveLocalGame();
+			for (var i=0; i<instance_exists(objPlayer); i++){
+				instance_destroy(objPlayer)
+			}
 			setupPlayers(numbPlayers);
 			lobby = false;
 		}
@@ -152,7 +155,7 @@ if startMenu {
 		
 		var adddie = collision_point(mouse_x,mouse_y,objAddDie,false,true);
 		if adddie {
-			numbDice = Approach(numbDice,6,1);
+			numbDice = Approach(numbDice,5,1);
 		}
 		var removedie= collision_point(mouse_x,mouse_y,objRemoveDice,false,true);
 		if removedie {

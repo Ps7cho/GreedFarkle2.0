@@ -5,16 +5,21 @@ with objPlayer {
 	if isWinning{
 		Points = points;
 		roundPoints = 0;
-		if Won {
-			other.Win = string(name);
-			audio_play_sound(Electro_win_sound,1,false);
-		}
 	}
 } 
 
-for (var i=0; i<instance_exists(objPlayer); i++){
-	instance_destroy(objPlayer)
+if Won {
+	Win = true;
+	with (objPlayer){
+		ds_map_add(Wins,points,id);
+		ds_list_add(scores,points);
+	}
+	audio_play_sound(Electro_win_sound,1,false);
+	ds_list_sort(scores,false);
 }
+
+
+
 for (var i=0; i<instance_exists(ObjDice); i++){
 	instance_destroy(ObjDice)
 }

@@ -5,8 +5,21 @@ draw_set_halign(fa_center);
 draw_set_valign(fa_top);
 draw_set_font(fnt_HighwindLarge);
 if Win != noone{
-	draw_text(xx, (room_height/2), string(Win) + " won with " + string(Points)  + " points!" );
+	var size = ds_map_size(Wins);
+	
+	draw_set_alpha(0.5);
+	draw_rectangle_color((room_width/8),80,(room_width/8)*7,(room_height/12)+size*70 ,c_black,c_black,c_black,c_black,false);
+	draw_set_alpha(1);
+	
+	for (var i= 0; i<size; i++){
+		 var this = ds_list_find_value(scores,i);
+		 var guy = ds_map_find_value(Wins,this);
+		 draw_set_color(guy.color);
+		draw_text(xx, (room_height/12)+i*70, string(guy.name) + " finished with " + string(this)  + " points!" );
+	}
+	
 }
+
 				#region Lobby
 if lobby {
 	for (var i =0; i<numbPlayers-numbAI; i++;){

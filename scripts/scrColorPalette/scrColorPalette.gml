@@ -2,15 +2,15 @@
 colors = ds_list_create();
 
 coral = make_color_rgb(255,216,177);
-beige = make_color_rgb(255,250,200);
+beige = make_color_rgb(88,112,52);
 lavender = make_color_rgb(230,190,255);
-teal = make_color_rgb(0,128,128);
+teal = make_color_rgb(0,34,120);
 purple = make_color_rgb(145,30,180);
 orange = make_color_rgb(245, 130, 49);
-pink = make_color_rgb(250,190,190);
+pink = make_color_rgb(242,121,121);
 yellow = make_color_rgb(255,255,25);
 red = make_color_rgb(230, 25, 75);
-mint = make_color_rgb(10,255,198);
+mint = make_color_rgb(0,228,245);
 
 
 

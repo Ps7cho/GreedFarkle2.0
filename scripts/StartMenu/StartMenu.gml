@@ -51,6 +51,9 @@ if startMenu {
 			instance_activate_layer("Lobby");
 			lobby = true;
 			instance_deactivate_layer("Play");
+			if instance_exists(objClientServer){
+				instance_destroy(objClientServer);	
+			}
 		}
 		var online = collision_point(mouse_x,mouse_y,objOnline,false,true);
 		if online {
@@ -63,12 +66,24 @@ if startMenu {
 		#region Online
 		var Host = collision_point(mouse_x,mouse_y,objHost,false,true);
 		if Host {
-			instance_create_layer(0,0,"Online", objClientServer);
+			instance_activate_layer("OnlineLobby");
+			instance_deactivate_layer("Online");
+			if !instance_exists(objClientServer){
+				var serv = instance_create_layer(0,0,"Online", objClientServer);
+				serv.Host = true;
+			}
 			
 		}
 		var Join = collision_point(mouse_x,mouse_y,objJoin,false,true);
 		if Join {
-			instance_create_layer(0,0,"Online", objClientServer);
+			instance_deactivate_layer("Online");
+			if !instance_exists(objClientServer){
+				instance_create_layer(0,0,"Online", objClientServer);
+			}
+			with (objClientServer){
+				sendPacket(networkEvents.roomQuery,8,1);
+				joinLobby = true;
+			}
 		}
 		
 		#endregion

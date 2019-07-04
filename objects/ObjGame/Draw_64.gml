@@ -1,5 +1,5 @@
 /// @description 
-
+draw_text(100,100,fps_real);
 draw_set_color(textColor);
 draw_set_halign(fa_center);
 draw_set_valign(fa_top);

@@ -1,12 +1,12 @@
 /// @description 
-type = network_socket_udp;
+type = network_socket_tcp;
 port = 6112;
 
-localHost = "192.168.1.65";
-ipAddress = string(76)+string(.187)+string(.20)+string(.162);
+localHost = "169.254.38.128";
+Address = string(170)+string(.72)+string(.9)+string(.39);
 
 socket = network_create_socket(type);
-//isConnected = network_connect(socket, localHost, port);
+isConnected = network_connect(socket, localHost, port);
 
 size = 256;
 var type = buffer_fixed;
@@ -17,17 +17,32 @@ bufferLarge = buffer_create(1024,type,alignment);
 globalvar clientMap;
 clientMap = ds_map_create();
 myId = -1;
+Ping = -1;
 playerName = noone;
 
 globalvar debug;
 debug = true;
 
+GameID = 0022;
+
 enum networkEvents {
 	ping,
 	name,
 	connect,
-	initialConnect,
+	roomQuery,
+	joinRoom,
 	save,
+	host,
+	message,
+	input,
 	
-	disconnect,
+	disconnect
 }
+
+Host = false;
+startLobby = false;
+joinLobby = false;
+
+lobbyList = ds_list_create();
+
+pingInterval = 0;

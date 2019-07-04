@@ -23,4 +23,4 @@ buffer_write(saveBuffer, buffer_u8, networkEvents.save);
 
 ds_map_secure_save_buffer(saveMap,saveBuffer);
 
-sendPacket(saveBuffer);
+//sendPacket(saveBuffer);

@@ -76,6 +76,8 @@ y4 = 230;
 y5 = 260;
 y6 = 330;
 
+
+
 if file_exists("Save1.ini"){
 	loadLocalGame();
 }else{
@@ -85,3 +87,11 @@ Humans = numbPlayers-numbAI;
 
 setupStartMenu();
 
+BG15 = room_width/105;
+BG6 = room_height/150;
+
+for (var i=0; i<BG15; i++){
+	for (var j=0; j<BG6; j++){
+		instance_create_layer(i*120,j*190,"Instances_2",objBackground);
+	}
+}

@@ -22,19 +22,25 @@ switch(msgid){
 		}
 	break;
 	#endregion	
-#region Initial Connection
-	case networkEvents.initialConnect:
+#region other player joined room
+case networkEvents.roomQuery:
+	
+	var roomID = buffer_read(packet, buffer_u16);
+	ds_list_add(lobbyList,roomID);
+	break;
+	#endregion
+#region other player joined room
+	case networkEvents.joinRoom:
 			
 		var 
 		client = buffer_read(packet, buffer_u16);
-		myId = client;
 
 												//Send Name
 		buffer_seek(buffer, buffer_seek_start, 0);
 		buffer_write(buffer, buffer_u8, networkEvents.name); //message ID
 		buffer_write(buffer, buffer_string, objClientServer.playerName); //Name
 		
-		network_send_udp(socket, localHost, port, buffer, buffer_tell(buffer));
+		network_send_packet(socket, buffer, buffer_tell(buffer));
 		break;
 		#endregion
 #region Someone connected	
@@ -59,5 +65,24 @@ switch(msgid){
 		}
 	
 	break;
-}
+
 	#endregion
+#region message
+	case networkEvents.message:
+			
+		var client = buffer_read(packet, buffer_u16);
+		var message = buffer_read(packet, buffer_string);
+		
+		if client = 0 {
+			var name = "server"	
+		}else{
+			if(ds_map_exists(clientMap, string(client))){
+				var clientObject = clientMap[? string(client)];
+				var name = clientObject.name;
+			}
+		}
+		localHost = string(name + ": "+ message);
+		
+	break;
+	#endregion	
+}

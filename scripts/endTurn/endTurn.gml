@@ -19,4 +19,8 @@ with ObjDice{
 tweening = 30;
 SwitchPlayersTimer = 35; //switch players
 
+if instance_exists(objGreed){
+	instance_destroy(objGreed);	
+}
+
 saveState();

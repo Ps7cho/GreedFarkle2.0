@@ -295,6 +295,14 @@
             }
         },
         {
+            "Key": "26789cf2-05c2-41ba-84b5-c4e576df8ea8",
+            "Value": {
+                "id": "92792f21-43cb-44f8-99bc-fa445b995a7c",
+                "resourcePath": "objects\\objBackground\\objBackground.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "28025a1b-c0eb-47f7-a6db-1c1ebf28e099",
             "Value": {
                 "id": "6a9a260b-9c5e-4d09-bea8-2ed742a80954",
@@ -348,6 +356,14 @@
                 "id": "84f85c67-df6a-42ad-adab-0c9f99837d71",
                 "resourcePath": "sounds\\Electro_win_sound\\Electro_win_sound.yy",
                 "resourceType": "GMSound"
+            }
+        },
+        {
+            "Key": "2ee07192-75fc-4c06-b53c-5ab76871bad8",
+            "Value": {
+                "id": "6a803501-f5f2-4e34-971d-0c158aa92246",
+                "resourcePath": "sprites\\sprite35\\sprite35.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -1583,14 +1599,6 @@
             }
         },
         {
-            "Key": "fae0872e-464b-487c-9527-356e3d89b604",
-            "Value": {
-                "id": "21e9a021-f921-4171-a43c-af520609a066",
-                "resourcePath": "scripts\\script79\\script79.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
             "Key": "fbd9a670-99ec-4cc3-96ed-ea10f5e12d12",
             "Value": {
                 "id": "8337aef0-0139-4624-9085-07fdfbb7271d",
@@ -1687,7 +1695,6 @@
         "8f30f0e0-9dbf-460b-90bc-217a5c212117",
         "0a25f683-7686-4420-927f-67c2b11e6923",
         "1f73e0b1-a319-442b-b4d5-133fb61f0f62",
-        "fae0872e-464b-487c-9527-356e3d89b604",
         "fab63f88-b4b7-4cb1-88bc-861af4f6f534"
     ],
     "tutorial": ""

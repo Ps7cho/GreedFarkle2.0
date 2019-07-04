@@ -43,6 +43,6 @@ Host = false;
 startLobby = false;
 joinLobby = false;
 
-lobbyList = ds_list_create();
+lobbyList = ds_grid_create(255,30);
 
 pingInterval = 0;

@@ -44,6 +44,7 @@ instance_create_layer(200, 0, "Online", objBack);
 instance_create_layer(200, 0, "Sounds", objBack);
 instance_create_layer(200, 0, "Gameplay", objBack);
 instance_create_layer(200, 0, "Play", objBack);
+instance_create_layer(200, 0, "OnlineLobby", objBack);
 
 
 instance_create_layer(1200,650,"Top",objPass);

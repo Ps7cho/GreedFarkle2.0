@@ -22,11 +22,24 @@ switch(msgid){
 		}
 	break;
 	#endregion	
-#region other player joined room
+#region recive lobby info
 case networkEvents.roomQuery:
+
+	var hostName = buffer_read(packet, buffer_string);
+	var total = buffer_read(packet, buffer_u32);
+	var threshold = buffer_read(packet, buffer_u16);
+	var numb = buffer_read(packet, buffer_u8);
 	
-	var roomID = buffer_read(packet, buffer_u16);
-	ds_list_add(lobbyList,roomID);
+	for (var j=0; j<255; j++){
+		var i = ds_grid_get(lobbyList,j,0)	
+		if i = 0 break;
+	}
+	ds_grid_add(lobbyList,j,0,1);
+	ds_grid_add(lobbyList,j,1,hostName);
+	ds_grid_add(lobbyList,j,2,total);
+	ds_grid_add(lobbyList,j,3,threshold);
+	ds_grid_add(lobbyList,j,4,numb);
+	
 	break;
 	#endregion
 #region other player joined room

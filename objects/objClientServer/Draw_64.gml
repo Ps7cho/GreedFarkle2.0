@@ -13,10 +13,28 @@ if startLobby or joinLobby {
 	draw_set_alpha(1);
 }
 if joinLobby{
-	var numb = ds_list_size(lobbyList);
-	for (var i=0; i<numb; i++){
-		var name = ds_list_find_value(lobbyList,i);
-		draw_text(room_width/2+margin,(margin*2)+i*margin,string(name));
-		draw_text(300,300,numb);
+	draw_set_font(fnt_HighwindMed);
+	draw_text(room_width/2+margin*2.1,(margin),"Host Name");
+	draw_text(room_width/2+margin+300,(margin),"Score");
+	draw_text(room_width/2+margin+500,(margin),"Threshold");
+	draw_text(room_width/2+margin+700,(margin),"Players");
+	
+	for (var j=0; j<255; j++){
+		var i = ds_grid_get(lobbyList,j,0)	
+		if i < 1 break;
+	}
+	for (var i=0; i<j; i++){
+		var name = ds_grid_get(lobbyList,i,1);
+		var total = ds_grid_get(lobbyList,i,2);
+		var hold = ds_grid_get(lobbyList,i,3);
+		var numb = ds_grid_get(lobbyList,i,4);
+		draw_text(room_width/2+margin*2.1,(margin*2)+i*margin,string(name));
+		
+		var more =  300;
+		draw_text(room_width/2+margin+more,(margin*2)+i*margin,string(total));
+		more += 175;
+		draw_text(room_width/2+margin+more,(margin*2)+i*margin,string(hold));
+		more += 225;
+		draw_text(room_width/2+margin+more,(margin*2)+i*margin,string(numb));
 	}
 }

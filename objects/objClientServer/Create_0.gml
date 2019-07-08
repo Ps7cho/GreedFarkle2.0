@@ -42,6 +42,7 @@ enum networkEvents {
 Host = false;
 startLobby = false;
 joinLobby = false;
+inlobby = false;
 
 lobbyList = ds_grid_create(255,30);
 

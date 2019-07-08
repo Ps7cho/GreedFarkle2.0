@@ -4,20 +4,23 @@ if startMenu {
 		if back {
 			DeactivateAllLayers();
 			saveLocalGame();
-			if OptionMenu {
-				OptionMenu = false;
+			
+			if back = OptionsBack{
 				instance_activate_layer("Start");
-			}else if OnlineMenu{
-				OnlineMenu = false;
+			}else if back = OnlineBack{
 				instance_activate_layer("Play");
-			}else if lobby{
+			}else if back = LobbyBack{
 				lobby = false;
 				instance_activate_layer("Play");
-			}else if playSelect{
-				playSelect = false;
+			}else if back = PlayBack{
 				instance_activate_layer("Start");
+			}else if back = JoinOnlineBack{
+				server.joinLobby = false;
+				instance_activate_layer("Online");
+			}else if back = HostOnlineBack{
+				server.startLobby = false;
+				instance_activate_layer("Online");
 			}else{
-				OptionMenu = true;
 				instance_activate_layer("Options");
 			}
 		}
@@ -51,13 +54,13 @@ if startMenu {
 			instance_activate_layer("Lobby");
 			lobby = true;
 			instance_deactivate_layer("Play");
-			if instance_exists(objClientServer){
-				instance_destroy(objClientServer);	
+			if server != noone{
+				instance_destroy(server);
+				server = noone;
 			}
 		}
 		var online = collision_point(mouse_x,mouse_y,objOnline,false,true);
 		if online {
-			OnlineMenu = true;
 			Win = noone;
 			instance_activate_layer("Online");
 			instance_deactivate_layer("Play");
@@ -66,24 +69,31 @@ if startMenu {
 		#region Online
 		var Host = collision_point(mouse_x,mouse_y,objHost,false,true);
 		if Host {
-			instance_activate_layer("OnlineLobby");
+			instance_activate_layer("HostOnline");
 			instance_deactivate_layer("Online");
-			if !instance_exists(objClientServer){
-				var serv = instance_create_layer(0,0,"Online", objClientServer);
-				serv.Host = true;
+			if server = noone{
+				server = instance_create_layer(0,0,"Online", objClientServer);
+				server.Host = true;
+				server.startLobby = true;
+			}else{
+				server.Host = true;
+				server.startLobby = true;
 			}
+			instance_activate_layer("HostOnline");
 			
 		}
 		var Join = collision_point(mouse_x,mouse_y,objJoin,false,true);
 		if Join {
 			instance_deactivate_layer("Online");
-			if !instance_exists(objClientServer){
-				instance_create_layer(0,0,"Online", objClientServer);
+			if server = noone{
+				server = instance_create_layer(0,0,"Online", objClientServer);
 			}
-			with (objClientServer){
+			with (server){
 				sendPacket(networkEvents.roomQuery,8,1);
-				joinLobby = true;
 			}
+			server.joinLobby = true;
+			
+			instance_activate_layer("JoinOnline");
 		}
 		
 		#endregion
@@ -92,7 +102,7 @@ if startMenu {
 		if Play {
 			instance_deactivate_layer("Lobby");
 			saveLocalGame();
-			for (var i=0; i<instance_exists(objPlayer); i++){
+			for (var i=0; i<instance_exists(objPlayer); i++){ // watch for online stuff
 				instance_destroy(objPlayer)
 			}
 			setupPlayers(numbPlayers);

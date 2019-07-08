@@ -4,11 +4,13 @@ draw_set_color(textColor);
 draw_set_halign(fa_center);
 draw_set_valign(fa_top);
 draw_set_font(fnt_HighwindLarge);
+				#region Win scoreboard
 if Win != noone{
 	var size = ds_map_size(Wins);
 	
 	draw_set_alpha(0.5);
 	draw_rectangle_color((room_width/8),80,(room_width/8)*7,(room_height/12)+size*70 ,c_black,c_black,c_black,c_black,false);
+	draw_rectangle_color((room_width/8),80,(room_width/8)*7,(room_height/12)+size*70 ,c_white,c_white,c_white,c_white,true);
 	draw_set_alpha(1);
 	
 	for (var i= 0; i<size; i++){
@@ -19,8 +21,12 @@ if Win != noone{
 	}
 	
 }
-
+			#endregion
 				#region Lobby
+				draw_text(400,400,string(server));
+				if server != noone{
+					draw_text(400,450,string(server.joinLobby));
+				}
 if lobby {
 	for (var i =0; i<numbPlayers-numbAI; i++;){
 		draw_set_color(colors[| i]);

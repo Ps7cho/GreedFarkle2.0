@@ -37,15 +37,17 @@ instance_create_layer(1300, 700, "Gameplay", objScoreDown);
 instance_create_layer(1300, 850, "Gameplay", objWinningColor);
 instance_create_layer(1300, 850, "Gameplay", objWinningRed);
 
-instance_create_layer(200, 0, "Options", objBack);
-instance_create_layer(200, 0, "Controls", objBack);
-instance_create_layer(200, 0, "Lobby", objBack);
-instance_create_layer(200, 0, "Online", objBack);
-instance_create_layer(200, 0, "Sounds", objBack);
-instance_create_layer(200, 0, "Gameplay", objBack);
-instance_create_layer(200, 0, "Play", objBack);
-instance_create_layer(200, 0, "OnlineLobby", objBack);
-
+OptionsBack = 			instance_create_layer(200, 0, "Options",		objBack);
+						instance_create_layer(200, 0, "Controls",		objBack);
+LobbyBack = 			instance_create_layer(200, 0, "Lobby",			objBack);
+OnlineBack = 			instance_create_layer(200, 0, "Online",			objBack);
+						instance_create_layer(200, 0, "Sounds",			objBack);
+						instance_create_layer(200, 0, "Gameplay",		objBack);
+PlayBack = 				instance_create_layer(200, 0, "Play",			objBack);
+OnlineLobbyBack = 		instance_create_layer(200, 0, "OnlineLobby",	objBack);
+JoinOnlineBack = 		instance_create_layer(200, 0, "JoinOnline",		objBack);
+HostOnlineBack = 		instance_create_layer(200, 0, "HostOnline",		objBack);
+DeactivateAllLayers();
 
 instance_create_layer(1200,650,"Top",objPass);
 instance_create_layer(1000,450,"Top",objHelp);

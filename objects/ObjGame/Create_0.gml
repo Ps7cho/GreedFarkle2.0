@@ -5,6 +5,8 @@ globalvar numbDice, numbFrozen, numbPlayers, numbAI, Points, roundPoints, thresh
 block, currentPlayer, startMenu, OptionMenu, Setup, Name, WinnerColor, textColor, Wins, scores;
 
 
+PC = true;
+
 numbDice = 5;
 numbPlayers = 3;
 numbAI = 2;
@@ -18,15 +20,12 @@ numbFrozen = 0;
 block = false;
 Setup = false;
 startMenu = true;
-OptionMenu = false;
-OnlineMenu = false;
 currentPlayer = -1;
 lobby = false;
 Tutorial = false;
 EditRoom = false;
 playSelect = false;
 Name = "Player";
-TempName = Name;
 
 scrColorPalette();
 
@@ -86,6 +85,8 @@ saveLocalGame();
 Humans = numbPlayers-numbAI;
 
 setupStartMenu();
+
+server = noone;
 
 BG15 = room_width/105;
 BG6 = room_height/150;

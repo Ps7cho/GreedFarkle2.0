@@ -29,6 +29,7 @@ case networkEvents.roomQuery:
 	var total = buffer_read(packet, buffer_u32);
 	var threshold = buffer_read(packet, buffer_u16);
 	var numb = buffer_read(packet, buffer_u8);
+	var client = buffer_read(packet, buffer_u32);
 	
 	for (var j=0; j<255; j++){
 		var i = ds_grid_get(lobbyList,j,0)	
@@ -39,21 +40,28 @@ case networkEvents.roomQuery:
 	ds_grid_add(lobbyList,j,2,total);
 	ds_grid_add(lobbyList,j,3,threshold);
 	ds_grid_add(lobbyList,j,4,numb);
+	ds_grid_add(lobbyList,j,5,client);
 	
 	break;
 	#endregion
 #region other player joined room
 	case networkEvents.joinRoom:
 			
-		var 
-		client = buffer_read(packet, buffer_u16);
-
-												//Send Name
-		buffer_seek(buffer, buffer_seek_start, 0);
-		buffer_write(buffer, buffer_u8, networkEvents.name); //message ID
-		buffer_write(buffer, buffer_string, objClientServer.playerName); //Name
+		NewName = buffer_read(packet, buffer_string);
+		NewColor = buffer_read(packet, buffer_u8);
 		
-		network_send_packet(socket, buffer, buffer_tell(buffer));
+		with ObjGame{
+			var player = instance_create_layer(0,0,"Table", objPlayer);
+			player.points = 0;
+			player.isWinning = false;
+			player.finalRound = false;
+			player.AI = false;						
+			player.local = false;
+			player.color = colors[| other.NewColor];
+			player.name = other.NewName
+			ds_list_add(playerList,player);
+		}
+		
 		break;
 		#endregion
 #region Someone connected	
@@ -69,13 +77,6 @@ case networkEvents.roomQuery:
 #region Client Disconnect
 	case networkEvents.disconnect: 
 			
-		var client = buffer_read(packet, buffer_u16);
-		var clientObject = clientMap[? string(client)];
-		
-		if clientObject != undefined && instance_exists(clientObject) {
-			instance_destroy(clientObject);
-			ds_map_delete(clientMap, string(client));
-		}
 	
 	break;
 

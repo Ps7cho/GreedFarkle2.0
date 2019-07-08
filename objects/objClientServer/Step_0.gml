@@ -23,11 +23,14 @@ if Host{
 }
 
 // Join
-
-// send request for a list of all rooms 
-
-// add each room to a list
+if joinLobby {
+	for (var j=0; j<255; j++){
+		var i = ds_grid_get(lobbyList,j,0)	
+		if i < 1 break;
+	}
+	
 
 //desplay them all in a list that is selectible 
 
 // desplay your name and let it be editable 
+}

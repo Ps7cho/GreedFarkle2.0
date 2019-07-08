@@ -10,3 +10,6 @@ instance_deactivate_layer("Sounds");
 instance_deactivate_layer("Online");
 instance_deactivate_layer("Table");
 instance_deactivate_layer("Top");
+instance_deactivate_layer("OnlineLobby");
+instance_deactivate_layer("JoinOnline");
+instance_deactivate_layer("HostOnline");

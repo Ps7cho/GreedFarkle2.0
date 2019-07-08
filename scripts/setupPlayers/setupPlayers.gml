@@ -21,6 +21,9 @@ for (var i=0; i<totalPlayers; i++){
 	}
 	ds_list_add(playerList,player);
 }
+
+
+////////////////////////////////////////////START GAME/////////////////////////////////////
 instance_activate_layer("Table");
 currentPlayer = ds_list_find_value(playerList,irandom_range(0,(ds_list_size(playerList)-1)));
 
@@ -42,8 +45,13 @@ for (var i=0; i<numbDice; i++) {
 Win = noone;
 
 instance_activate_layer("Top");
+
 if instance_exists(objHelp){
-	objHelp.image_index = 1;	//Android 
+	if PC{
+		objHelp.image_index = 0;		// PC 
+	}else {
+		objHelp.image_index = 1;		//Android 	
+	}
 }
 
 

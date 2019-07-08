@@ -22,8 +22,9 @@ switch(msgid){
 		}
 	break;
 	#endregion	
-#region recive lobby info
+#region other player joined room
 case networkEvents.roomQuery:
+
 
 	var hostName = buffer_read(packet, buffer_string);
 	var total = buffer_read(packet, buffer_u32);
@@ -41,7 +42,7 @@ case networkEvents.roomQuery:
 	ds_grid_add(lobbyList,j,3,threshold);
 	ds_grid_add(lobbyList,j,4,numb);
 	ds_grid_add(lobbyList,j,5,client);
-	
+
 	break;
 	#endregion
 #region other player joined room

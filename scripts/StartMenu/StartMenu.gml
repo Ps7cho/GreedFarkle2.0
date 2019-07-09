@@ -20,6 +20,12 @@ if startMenu {
 			}else if back = HostOnlineBack{
 				server.startLobby = false;
 				instance_activate_layer("Online");
+			}else if back = OnlineLobbyBack{
+				server.inlobby = false;
+				instance_activate_layer("JoinLobby");
+				instance_deactivate_layer("OnlineLobby");
+				server.joinLobby = true;
+				//leave the servers lobby and reset all the things
 			}else{
 				instance_activate_layer("Options");
 			}
@@ -72,12 +78,15 @@ if startMenu {
 			instance_activate_layer("HostOnline");
 			instance_deactivate_layer("Online");
 			if server = noone{
-				server = instance_create_layer(0,0,"Online", objClientServer);
+				server = instance_create_layer(0,0,"Instances_1", objClientServer);
 				server.Host = true;
 				server.startLobby = true;
 			}else{
 				server.Host = true;
 				server.startLobby = true;
+			}
+			with (server){
+				sendPacket(networkEvents.host,32,winningTotal,16,threshold,2,ObjGame.playerNames[| 0],8,0);
 			}
 			instance_activate_layer("HostOnline");
 			
@@ -86,9 +95,10 @@ if startMenu {
 		if Join {
 			instance_deactivate_layer("Online");
 			if server = noone{
-				server = instance_create_layer(0,0,"Online", objClientServer);
+				server = instance_create_layer(0,0,"Instances_1", objClientServer);
 			}
 			with (server){
+				ds_grid_set_region(lobbyList,0,0,30,255,0);
 				sendPacket(networkEvents.roomQuery,8,1);
 			}
 			server.joinLobby = true;

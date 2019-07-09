@@ -26,6 +26,7 @@ if Win != noone{
 				draw_text(400,400,string(server));
 				if server != noone{
 					draw_text(400,450,string(server.joinLobby));
+					draw_text(400,550,string(server.startLobby));
 				}
 if lobby {
 	for (var i =0; i<numbPlayers-numbAI; i++;){

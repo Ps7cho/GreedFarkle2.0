@@ -40,7 +40,7 @@ enum networkEvents {
 }
 
 Host = false;
-startLobby = false;
+startLobby = noone;
 joinLobby = false;
 inlobby = false;
 

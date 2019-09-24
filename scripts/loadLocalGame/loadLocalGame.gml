@@ -1,4 +1,5 @@
 ///Load the game settings from a map
+/*
 ini_open("Save1.ini");
 save = ini_read_string("Save1", "0", 0);
 
@@ -25,7 +26,7 @@ if color = 1 {
 		player.color = ds_map_find_value(save, string(i+11));
 	}
 	playerList = ds_map_find_value(save, "9",);
-}*/
+}
 for (var i = 0; i<10; i++;){
 	var name = ini_read_string("players",i,"Player");
 	ds_list_replace(playerNames,i,name);

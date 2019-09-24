@@ -1,6 +1,9 @@
 ///endTurn();
 
 roundPoints += Points;
+if !bustState && Points > 0 {
+	RPscaleModify = maxScaleMod;
+}
 currentPlayer.points += roundPoints;
 Points = 0;
 WhoIsWinning();

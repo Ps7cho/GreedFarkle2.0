@@ -54,10 +54,16 @@ for (var i = 1; i<=10; i++;){
 
 WinnerColor = c_aqua;
 textColor = c_silver;
+Green = make_color_rgb(90,180,100);
+Blue = make_color_rgb(120,180,200);
 draw_set_color(textColor);
+scale = 1;
+RPscaleModify = 1;
+maxScaleMod = 1.3;
 
-doubleTap = 0;
 frame = 0;
+
+Margin = 50;
 
 Width = room_width/2;
 Height = room_height/2;
@@ -68,20 +74,21 @@ tweening = 0;
 x1 = room_width/2;
 x2 = (room_width/6);
 x3 = (room_width/6)*5;
-y1 = 50;
-y2 = 120;
-y3 = 190;
-y4 = 230;
-y5 = 260;
-y6 = 330;
+y1 = 50+Margin;
+y2 = 120+Margin;
+y3 = 190+Margin;
+y4 = 230+Margin;
+y5 = 260+Margin;
+y6 = 330+Margin;
 
 
 
-if file_exists("Save1.ini"){
+/*if file_exists("Save1.ini"){
 	loadLocalGame();
 }else{
 saveLocalGame();
 }
+*/
 Humans = numbPlayers-numbAI;
 
 setupStartMenu();

@@ -30,13 +30,13 @@ if currentPlayer{
 		#region //Roll Dice
 if keyboard_check_pressed(vk_space) || device_mouse_check_button_pressed(0,mb_right){
 	if bustState{
-		bustState = false;
 		if instance_exists(objGreed){
 			instance_destroy(objGreed);	
 		}
 		Bust1();
 		endTurn();
 		reset();
+		bustState = false;
 	}
 	if !currentPlayer.AI {
 		RollDice();
@@ -64,6 +64,7 @@ if mouse_check_button_pressed(mb_left) or device_mouse_check_button_pressed(0,mb
 	}
 	var exitbutton = collision_point(mouse_x, mouse_y, objExcapeButton,false,true);
 	if exitbutton {
+		//ask if they are sure they want to quit;
 		EndGame(false);
 		exit;
 	}
@@ -96,7 +97,11 @@ if bustTimer2 == 0{
 if SwitchPlayersTimer == 0{
 	SwitchPlayers();
 }
-
+if RPscaleModify > 1{
+	RPscaleModify -= 0.05;	
+}else{
+	RPscaleModify = 1;
+}
 
 
 SwitchPlayersTimer --;

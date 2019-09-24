@@ -1,4 +1,5 @@
 ///Save the game settings to a list/ini
+/*
 ini_open("Save1.ini")
 ini_write_real("settings", 11, numbDice);
 ini_write_real("settings", 12, numbPlayers);

@@ -6,7 +6,7 @@ instance_create_layer(1300, 500, "Start", objOptions);
 instance_create_layer(Width, 0, "Start", objGreedMenu);
 
 instance_create_layer(300, 500, "Play", objLocal);
-instance_create_layer(1300, 500, "Play", objOnline);
+//instance_create_layer(1300, 500, "Play", objOnline);
 
 
 instance_create_layer(300, 500, "Options", objGameplay);

@@ -815,6 +815,14 @@
             }
         },
         {
+            "Key": "76a9aa43-d169-44dd-b05a-0ab3c1fbb3e6",
+            "Value": {
+                "id": "413871ee-8070-40d1-bfe4-cdfe237875d5",
+                "resourcePath": "scripts\\ClearRound\\ClearRound.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "77b76c29-60d3-453d-8dfd-8d94990494e5",
             "Value": {
                 "id": "2300f994-2328-494c-a76c-90858ac32ede",
@@ -1695,7 +1703,8 @@
         "8f30f0e0-9dbf-460b-90bc-217a5c212117",
         "0a25f683-7686-4420-927f-67c2b11e6923",
         "1f73e0b1-a319-442b-b4d5-133fb61f0f62",
-        "fab63f88-b4b7-4cb1-88bc-861af4f6f534"
+        "fab63f88-b4b7-4cb1-88bc-861af4f6f534",
+        "76a9aa43-d169-44dd-b05a-0ab3c1fbb3e6"
     ],
     "tutorial": ""
 }

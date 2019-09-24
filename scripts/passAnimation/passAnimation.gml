@@ -6,10 +6,11 @@ var y1 = (room_height/3)*1;
 var y2 = ((room_height/3)*2);
 
 if pass {
-xxx1 = 0;
-xxx2 = 0;
-pass = false;
+	xxx1 = 0;
+	xxx2 = 0;
+	pass = false;
 }
+
 var sped = 100;
 if xxx1 <= room_width {
 	xxx2 += sped ;
@@ -29,6 +30,10 @@ if xxx1 <= room_width {
 		draw_set_valign(fa_center);
 		draw_text(room_width/2,(y1+y2)/2, string(text));
 		draw_set_font(fnt_HighwindLarge);
-		draw_set_valign(fa_top);
+		draw_set_valign(fa_center);
+	}
+}else {
+	if Tutorial{
+		Passed = false;	
 	}
 }

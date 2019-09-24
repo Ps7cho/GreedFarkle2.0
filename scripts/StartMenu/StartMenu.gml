@@ -1,9 +1,10 @@
 if startMenu {
+
 	if mouse_check_button_pressed(mb_left){
 		var back = collision_point(mouse_x,mouse_y,objBack,false,true);
 		if back {
 			DeactivateAllLayers();
-			saveLocalGame();
+			//saveLocalGame();
 			
 			if back = OptionsBack{
 				instance_activate_layer("Start");
@@ -34,13 +35,13 @@ if startMenu {
 		var options = collision_point(mouse_x,mouse_y,objOptions,false,true);
 		if options {
 			OptionMenu = true;
-			Win = noone;
+			ClearRound();
 			instance_activate_layer("Options");
 			instance_deactivate_layer("Start");
 		}
 		var playButton = collision_point(mouse_x,mouse_y,objPlay1,false,true);
 		if playButton {
-			Win = noone;
+			ClearRound();
 			instance_activate_layer("Play");
 			playSelect = true;
 			instance_deactivate_layer("Start");
@@ -48,7 +49,7 @@ if startMenu {
 		var TutorialButton = collision_point(mouse_x,mouse_y,objTutorial,false,true);
 		if TutorialButton {
 			Tutorial = true;
-			Win = noone;
+			ClearRound();
 			instance_activate_layer("Tutorial");
 			instance_deactivate_layer("Start");
 			SetupTutorial();
@@ -67,7 +68,7 @@ if startMenu {
 		}
 		var online = collision_point(mouse_x,mouse_y,objOnline,false,true);
 		if online {
-			Win = noone;
+			ClearRound();
 			instance_activate_layer("Online");
 			instance_deactivate_layer("Play");
 		}
@@ -111,10 +112,8 @@ if startMenu {
 		var Play = collision_point(mouse_x,mouse_y,objPlay,false,true);
 		if Play {
 			instance_deactivate_layer("Lobby");
-			saveLocalGame();
-			for (var i=0; i<instance_exists(objPlayer); i++){ // watch for online stuff
-				instance_destroy(objPlayer)
-			}
+			//saveLocalGame();
+			ClearRound();
 			setupPlayers(numbPlayers);
 			lobby = false;
 		}

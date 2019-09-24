@@ -4,6 +4,7 @@ if currentPlayer.points < threshold{
 }
 roundPoints = 0;
 
+
 with (ObjDice){
 	Counted = false;
 	frozen = false;

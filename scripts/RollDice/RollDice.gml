@@ -3,15 +3,21 @@
 	if number = numbDice{ // all dice are frozen
 			reset(); // unlock them and keep rolling
 			number = checkNumbFrozen();
-			roundPoints += Points;
-			Points = 0;
+			if Points > 0 {
+				roundPoints += Points;
+				RPscaleModify = maxScaleMod;
+				Points = 0;
+			}
 	}
 	#endregion
 		#region Hold requirement / Rolling
 	if numbFrozen < number {// if you have locked a die then you can reroll the rest
 		numbFrozen = number;// the new bar to pass on this next hand
-		roundPoints += Points;
-		Points = 0;
+		if Points > 0{
+			roundPoints += Points;
+			RPscaleModify = maxScaleMod;
+			Points = 0;
+		}
 		
 		for (var i = 0; i < numbDice; i++) {
 			ID = Hand[| i];

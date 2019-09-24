@@ -1,4 +1,4 @@
-
+startMenu = false;
 var totalPlayers = argument0;
 var players = numbPlayers-numbAI; 
 Points = 0;

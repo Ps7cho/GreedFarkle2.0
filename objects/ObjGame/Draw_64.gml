@@ -1,16 +1,16 @@
 /// @description 
-draw_text(100,100,fps_real);
 draw_set_color(textColor);
+//draw_text(100,100,fps_real);
 draw_set_halign(fa_center);
-draw_set_valign(fa_top);
+draw_set_valign(fa_center);
 draw_set_font(fnt_HighwindLarge);
 				#region Win scoreboard
 if Win != noone{
 	var size = ds_map_size(Wins);
 	
 	draw_set_alpha(0.5);
-	draw_rectangle_color((room_width/8),80,(room_width/8)*7,(room_height/12)+size*70 ,c_black,c_black,c_black,c_black,false);
-	draw_rectangle_color((room_width/8),80,(room_width/8)*7,(room_height/12)+size*70 ,c_white,c_white,c_white,c_white,true);
+	draw_rectangle_color((room_width/8),46,(room_width/8)*7,((room_height/12)+size*70)-Margin ,c_black,c_black,c_black,c_black,false);
+	draw_rectangle_color((room_width/8),46,(room_width/8)*7,((room_height/12)+size*70)-Margin ,c_white,c_white,c_white,c_white,true);
 	draw_set_alpha(1);
 	
 	for (var i= 0; i<size; i++){
@@ -23,8 +23,8 @@ if Win != noone{
 }
 			#endregion
 				#region Lobby
-				draw_text(400,400,string(server));
 				if server != noone{
+					draw_text(400,400,string(server));
 					draw_text(400,450,string(server.joinLobby));
 					draw_text(400,550,string(server.startLobby));
 				}
@@ -56,10 +56,10 @@ if EditRoom {
 if !Setup exit;
 
 
-
-draw_set_alpha(0.7);
+draw_set_alpha(1);
 draw_rectangle_color(50,45,1878,116,c_dkgray,c_black,c_dkgray,c_black,false);
 draw_set_alpha(1);
+
 			#region Tweening
 if tweening > 0 {
 	x3 = lerp(x3,room_width/2,0.06); //Next player --> center
@@ -89,7 +89,7 @@ if tweening > 0 {
 draw_set_color(currentPlayer.color);
 draw_text(xx, y1, "Current Player");
 if currentPlayer.isWinning {
-	draw_sprite(FlamesSmall0,frame,xx,y4);
+	draw_sprite(FlamesSmall0,frame,xx,y4-Margin);
 	draw_text(x1, y2, currentPlayer.name);
 	draw_set_color(WinnerColor);
 }else{
@@ -98,13 +98,23 @@ if currentPlayer.isWinning {
 }
 draw_text(xx, y3, currentPlayer.points);
 
-draw_set_color(textColor);
-draw_text(xx, y5, roundPoints);
+
+draw_set_color(Blue);
+
+draw_text_transformed(xx, y5, roundPoints,scale*RPscaleModify,scale*RPscaleModify,0);
+
+draw_set_color(Green);
 draw_text(xx, y6, Points);
 #endregion
 				#region Tutorial 
 			if Tutorial{
+				draw_set_color(textColor);
 				draw_text(room_width/2,(room_height/4)*3, ds_list_find_value(Hand, 5));
+				draw_text(xx+250, y3, "Total Points");
+				draw_set_color(Blue);
+				draw_text(xx+250,y5,"Points this round")
+				draw_set_color(Green);
+				draw_text(xx+250, y6, "Points Selected");
 				exit;
 			}
 			#endregion
@@ -116,7 +126,7 @@ draw_set_color(textColor);
 draw_text(xx3, y1, "Next");
 draw_set_color(nextPlayer.color);
 if nextPlayer.isWinning {
-	draw_sprite(FlamesSmall0,frame,xx3,y4);
+	draw_sprite(FlamesSmall0,frame,xx3,y4-Margin);
 	draw_text(x3, y2, nextPlayer.name);
 	draw_set_color(WinnerColor);
 }else{
@@ -133,7 +143,7 @@ if numbPlayers > 2{
 	draw_set_color(lastPlayer.color);
 	
 	if lastPlayer.isWinning {
-		draw_sprite(FlamesSmall0,frame,xx2,y4);
+		draw_sprite(FlamesSmall0,frame,xx2,y4-Margin);
 		draw_text(x2, y2,lastPlayer.name);
 		draw_set_color(WinnerColor);
 	}else{

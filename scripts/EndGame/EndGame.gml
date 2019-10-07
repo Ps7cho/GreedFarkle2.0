@@ -39,7 +39,8 @@ if instance_exists(objGreed){
 ds_list_clear(playerList);
 ds_list_clear(Hand);
 
-
+Points = 0;
+roundPoints = 0;
 currentPlayer = -1;
 Setup = false;
 instance_activate_layer("Start");

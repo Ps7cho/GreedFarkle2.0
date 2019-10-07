@@ -3,6 +3,7 @@
 
 var die = collision_point(mouse_x,mouse_y,ObjDice,false,true);
 if die {
+	die.sparkle = irandom(4);//change the sparkle sprite that playes
 	if !die.frozen && !Passed {
 			
 		if checkForPoints(die) {

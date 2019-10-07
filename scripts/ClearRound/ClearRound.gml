@@ -6,3 +6,4 @@ with(objPlayer){
 }
 
 Win = noone;
+

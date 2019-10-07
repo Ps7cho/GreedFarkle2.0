@@ -5,7 +5,7 @@ globalvar numbDice, numbFrozen, numbPlayers, numbAI, Points, roundPoints, thresh
 block, currentPlayer, startMenu, OptionMenu, Setup, Name, WinnerColor, textColor, Wins, scores;
 
 
-PC = true;
+PC = false;
 
 numbDice = 5;
 numbPlayers = 3;
@@ -35,15 +35,17 @@ bustState = false;
 Win = noone;
 Wins = ds_map_create();
 scores = ds_list_create();
-AISelectPoints = 0;
+AISelectPoints = -1;
 AiChooseTurn = -1;
 bustTimer1 = -1;
 bustTimer2 = -1;
 SwitchPlayersTimer = -1;
 save = ds_list_create();
 
-AISelectTime = 30;
-wait = 80;
+AISelectTime = 30; // between turns
+wait = 80;		// during turn
+toss = 0; //this is for roll animation timer.
+midTurnToss = 0;
 
 playerList = ds_list_create();
 playerNames = ds_list_create();
@@ -60,7 +62,7 @@ draw_set_color(textColor);
 scale = 1;
 RPscaleModify = 1;
 maxScaleMod = 1.3;
-
+scoreboard = false;
 frame = 0;
 
 Margin = 50;
@@ -81,7 +83,7 @@ y4 = 230+Margin;
 y5 = 260+Margin;
 y6 = 330+Margin;
 
-
+exitHeld = 0;
 
 /*if file_exists("Save1.ini"){
 	loadLocalGame();

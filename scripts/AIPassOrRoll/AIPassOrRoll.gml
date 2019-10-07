@@ -12,7 +12,7 @@ with (objPlayer){
 		with (other){
 			var pointsToBeat = GetWinnersPoints();
 			if myPoints < pointsToBeat{  //if you are not winning in the final round 
-				RollDice();
+				rollStart();
 				AISelectPoints = wait;
 				exit
 			}else{
@@ -33,7 +33,7 @@ if myPoints >= winningTotal{ //If you are past winning total score pass.
 
 
 if number == numbDice { // if you have all dice selected roll again.
-	RollDice();
+	rollStart();
 	AISelectPoints = wait;
 	exit
 }
@@ -55,11 +55,11 @@ if currentPlayer.points < threshold{ // Get points on the board
 		Pass();	
 		exit
 	}else{
-		RollDice();
+		rollStart();
 		AISelectPoints = wait;
 		exit
 	}
 }
 
-RollDice();
+rollStart();
 AISelectPoints = wait;

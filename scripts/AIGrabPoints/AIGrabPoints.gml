@@ -15,7 +15,7 @@ if Passed{
 			FreshHand();
 		}
 	}
-	RollDice();
+	rollStart();
 	AISelectPoints = wait;	
 	exit
 }

@@ -7,6 +7,14 @@ if mouse_check_button_pressed(mb_left) or device_mouse_check_button_pressed(0,mb
 		EndGame(false);
 		Tutorial = false;
 		currentPlayer.points = 0;
+		Points = 0;
+		roundPoints = 0;
+		if instance_exists(objGreed){
+			instance_deactivate_object(objGreed);	
+		}
+		if instance_exists(objPass){
+			instance_deactivate_object(objPass);	
+		}
 		exit;
 	}
 }

@@ -35,11 +35,11 @@ if keyboard_check_pressed(vk_space) || device_mouse_check_button_pressed(0,mb_ri
 		}
 		Bust1();
 		endTurn();
-		reset();
+		toss = 10;
 		bustState = false;
 	}
 	if !currentPlayer.AI {
-		RollDice();
+		rollStart();
 	}
 }
  #endregion
@@ -52,6 +52,9 @@ if mouse_check_button_pressed(mb_left) || device_mouse_check_button_pressed(0,mb
 #endregion
 		#region buttons
 if mouse_check_button_pressed(mb_left) or device_mouse_check_button_pressed(0,mb_left){
+	if scoreboard{
+		scoreboard = false;	
+	}
 	if !currentPlayer.AI {
 		var pass = collision_point(mouse_x,mouse_y,objPass,false,true);
 		if pass {
@@ -62,28 +65,44 @@ if mouse_check_button_pressed(mb_left) or device_mouse_check_button_pressed(0,mb
 			FreshHand();
 		}
 	}
-	var exitbutton = collision_point(mouse_x, mouse_y, objExcapeButton,false,true);
-	if exitbutton {
-		//ask if they are sure they want to quit;
-		EndGame(false);
-		exit;
+	var ScoreBoard = collision_point(mouse_x, mouse_y, objScoreBoardButton,false,true);
+	if ScoreBoard{
+		scoreboard = !scoreboard;
+	
 	}
 }
+
+if mouse_check_button(mb_left) or device_mouse_check_button(0,mb_left){
+	var exitbutton = collision_point(mouse_x, mouse_y, objExcapeButton,false,true);
+	if exitbutton {
+		exitHeld ++;
+		
+		if exitHeld > 60{
+			EndGame(false);
+			exit;
+		}
+	}
+	
+}else{
+	exitHeld = 0;	
+}
+
+
 
 	#endregion
 
 
 		#region AI Mind
-	if AISelectPoints == 0{
-		AIGrabPoints();
+if AISelectPoints == 0{
+	AIGrabPoints();
 		
-	}
-	if AiChooseTurn == 0{
-		AIPassOrRoll();
+}
+if AiChooseTurn == 0{
+	AIPassOrRoll();
 		
-	}
-			AiChooseTurn --;
-			AISelectPoints --;
+}
+	AiChooseTurn --;
+	AISelectPoints --;
 			
 			#endregion
 		#region Timers
@@ -103,8 +122,17 @@ if RPscaleModify > 1{
 	RPscaleModify = 1;
 }
 
+if toss == 0 {
+	reset();	
+}
 
+if midTurnToss == 0{
+	RollDice();
+}
+
+midTurnToss --;
 SwitchPlayersTimer --;
+toss --;
 bustTimer1 --;
 bustTimer2 --;
 

@@ -51,6 +51,7 @@ DeactivateAllLayers();
 
 instance_create_layer(1200,650,"Top",objPass);
 instance_create_layer(1000,450,"Top",objHelp);
+instance_create_layer(1850,145,"Top",objScoreBoardButton);
 
 instance_create_layer(300, 500, "Online", objHost);
 instance_create_layer(800, 500, "Online", objJoin);

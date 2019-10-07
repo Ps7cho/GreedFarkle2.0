@@ -55,7 +55,7 @@
             "mvc": "1.0",
             "SpriteId": "1dd42a1a-1b44-4571-a36b-82ac20d3e8e7",
             "blendMode": 0,
-            "isLocked": true,
+            "isLocked": false,
             "name": "Layer 1",
             "opacity": 100,
             "visible": true

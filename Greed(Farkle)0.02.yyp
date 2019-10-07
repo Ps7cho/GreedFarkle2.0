@@ -31,6 +31,14 @@
     },
     "resources": [
         {
+            "Key": "0228691a-7227-4ccc-8785-19fa9b7e9392",
+            "Value": {
+                "id": "b798b4df-fcec-4012-b514-f324b644a0fb",
+                "resourcePath": "sprites\\Click_dice5\\Click_dice5.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "028752ae-2146-4ae5-a9aa-034181e37f7e",
             "Value": {
                 "id": "03a84301-c532-418c-8121-352e99c9ea98",
@@ -175,6 +183,14 @@
             }
         },
         {
+            "Key": "18f9bb0f-6ec8-4b3a-96b4-8983eab6be0c",
+            "Value": {
+                "id": "21d2b210-3592-40c0-a44b-d257e9b5d9a6",
+                "resourcePath": "sprites\\Click_dice2\\Click_dice2.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "1a4c9096-cadc-4421-8054-70ec4a36c64f",
             "Value": {
                 "id": "f60712ac-ef0c-4b0a-96f1-e106fa2d5590",
@@ -300,6 +316,14 @@
                 "id": "92792f21-43cb-44f8-99bc-fa445b995a7c",
                 "resourcePath": "objects\\objBackground\\objBackground.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "26e2f6fe-9172-4c47-bda7-d6ebc979a3fe",
+            "Value": {
+                "id": "51a55dce-3080-4858-ae05-08e4e312f252",
+                "resourcePath": "sprites\\scoreBoardButton\\scoreBoardButton.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -447,6 +471,14 @@
             }
         },
         {
+            "Key": "3a5d50bf-3873-496b-8077-0a73a5150064",
+            "Value": {
+                "id": "7cc7ed04-dd5e-45fa-b57d-be758abcc21a",
+                "resourcePath": "objects\\objScoreBoardButton\\objScoreBoardButton.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "3d7fefd2-b074-4730-a46e-1a97b93eda59",
             "Value": {
                 "id": "d9151060-023b-4f2d-9090-344d75227627",
@@ -516,6 +548,14 @@
                 "id": "d86e0d5a-025d-4f9a-86dd-353195f28a54",
                 "resourcePath": "views\\44cd2be7-4455-47f3-a1c0-e18a9c94dfb0.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "45ee6f10-c8f2-4594-8d84-fcb2fab6cbfa",
+            "Value": {
+                "id": "7231b651-709e-4b09-94ad-f120cc4e401b",
+                "resourcePath": "scripts\\rollStart\\rollStart.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -847,6 +887,14 @@
             }
         },
         {
+            "Key": "7e09aba2-4f34-4df9-8897-78d6e908e2b6",
+            "Value": {
+                "id": "daf48938-a683-4c25-bd6e-dd281de6ef92",
+                "resourcePath": "sprites\\DiceBacdrop\\DiceBacdrop.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "7e191269-d4e9-4dcf-ae73-88118312483c",
             "Value": {
                 "id": "0b45bb28-00fb-4b91-bdf2-09270d38e9c8",
@@ -932,6 +980,14 @@
                 "id": "2c3348f7-7e0c-4e1b-92d4-4345b73c3111",
                 "resourcePath": "scripts\\saveState\\saveState.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "8f96e6c9-c943-4cab-ac60-ae90dd5e7fbd",
+            "Value": {
+                "id": "b8cd17bf-62b2-4dcb-9959-2845a6d7edb5",
+                "resourcePath": "sprites\\Click_dice4\\Click_dice4.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -1092,6 +1148,14 @@
                 "id": "f8722079-9bb6-452b-9160-c830a20de046",
                 "resourcePath": "scripts\\ease_in_sine\\ease_in_sine.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "add029bf-7a93-4947-a2c9-a2493bcaff2b",
+            "Value": {
+                "id": "6b54e09a-c34c-4e4f-b444-3eb264d12c81",
+                "resourcePath": "sprites\\Click_dice3\\Click_dice3.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -1484,6 +1548,14 @@
                 "id": "a247022b-ef0a-4d37-b246-986a04841508",
                 "resourcePath": "scripts\\s_ease_out_elastic\\s_ease_out_elastic.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "ec77af2f-904c-46d4-bb27-31482835ae03",
+            "Value": {
+                "id": "01c50543-839f-48a3-a15f-5f6ef7cd58df",
+                "resourcePath": "sprites\\Click_dice1\\Click_dice1.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

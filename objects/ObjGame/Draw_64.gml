@@ -56,6 +56,8 @@ if EditRoom {
 if !Setup exit;
 
 
+
+
 draw_set_alpha(1);
 draw_rectangle_color(50,45,1878,116,c_dkgray,c_black,c_dkgray,c_black,false);
 draw_set_alpha(1);
@@ -123,7 +125,7 @@ draw_text(xx, y6, Points);
 				#region  Next Player
 
 draw_set_color(textColor);
-draw_text(xx3, y1, "Next");
+draw_text(xx3, y1, "Up Next");
 draw_set_color(nextPlayer.color);
 if nextPlayer.isWinning {
 	draw_sprite(FlamesSmall0,frame,xx3,y4-Margin);
@@ -153,7 +155,36 @@ if numbPlayers > 2{
 	draw_text(xx2, y3, lastPlayer.points);
 }
 #endregion
+				#region scoreboard
+if scoreboard{
+	draw_set_alpha(0.7);
+	draw_rectangle_color(0,0,room_width,room_height,c_black,c_black,c_black,c_black,false);
+	draw_set_alpha(1);		
+	
+	//loop through the players list and show them in their colors heighest to lowest.
+	with (objPlayer){
+		draw_set_color(color);
+		draw_text(room_width/3, y, string(name) + " has " + string(points)  + " points!" );
+	}
+		/*
+	size = instance_number(objPlayer)
+	for (var i= 0; i<size; i++){
+		 var this = ds_list_find_value(scores,i);
+		 var guy = ds_map_find_value(Wins,this);
+		 draw_set_color(guy.color);
+		draw_text(xx, (room_height/12)+i*70, string(guy.name) + " finished with " + string(this)  + " points!" );
+	}
+	*/
+}
 
+#endregion
+				#region exitHeld
+if exitHeld > 0 {
+	var screenCover = (room_width/45)*exitHeld;
+	draw_circle_color(50,50,screenCover,c_black,c_black,false);
+	//draw_rectangle_color(0,0,room_width,screenCover,c_black,c_black,c_black,c_black,false);	
+}
+				#endregion
 frame++;
 if frame >= 60 frame = 0;
 

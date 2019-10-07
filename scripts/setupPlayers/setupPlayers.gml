@@ -2,10 +2,10 @@ startMenu = false;
 var totalPlayers = argument0;
 var players = numbPlayers-numbAI; 
 Points = 0;
-AISelectPoints = 0;
+AISelectPoints = 60;
 
 for (var i=0; i<totalPlayers; i++){
-	player = instance_create_layer(0,0,"Table", objPlayer);
+	player = instance_create_layer(0,(room_height/10)+i*90,"Table", objPlayer);
 	player.points = 0;
 	player.isWinning = false;
 	player.finalRound = false;
@@ -54,6 +54,12 @@ if instance_exists(objHelp){
 	}
 }
 
+if instance_exists(objGreed){
+	instance_deactivate_object(objGreed);	
+}
+if instance_exists(objPass){
+	instance_deactivate_object(objPass);	
+}
 
 var b = checkBust();
 if b {

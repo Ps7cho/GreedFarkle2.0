@@ -162,10 +162,16 @@ if scoreboard{
 	draw_set_alpha(1);		
 	
 	//loop through the players list and show them in their colors heighest to lowest.
-	with (objPlayer){
-		draw_set_color(color);
-		draw_text(room_width/3, y, string(name) + " has " + string(points)  + " points!" );
+
+	
+	for (i = 0; i < ds_list_size(scores); i++){
+		var guy = ds_list_find_value(scores,i);
+			
+		draw_set_color(guy.color);
+		draw_text(room_width/3, (room_height/12)+i*70, string(guy.name) + " has " + string(guy.points)  + " points!" );
 	}
+	
+	
 		/*
 	size = instance_number(objPlayer)
 	for (var i= 0; i<size; i++){

@@ -20,6 +20,7 @@ for (var i=0; i<totalPlayers; i++){
 		player.name = "Computer" + "AI"+ string(i);
 	}
 	ds_list_add(playerList,player);
+	ds_list_add(scores,player);	
 }
 
 

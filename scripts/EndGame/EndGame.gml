@@ -32,9 +32,7 @@ if instance_exists(objFresh){
 for (var i=0; i<instance_exists(ObjDice); i++){
 	instance_destroy(ObjDice)
 }
-if instance_exists(objGreed){
-	instance_destroy(objGreed);	
-}
+destroyGreed();
 
 ds_list_clear(playerList);
 ds_list_clear(Hand);

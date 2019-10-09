@@ -5,7 +5,7 @@ globalvar numbDice, numbFrozen, numbPlayers, numbAI, Points, roundPoints, thresh
 block, currentPlayer, startMenu, OptionMenu, Setup, Name, WinnerColor, textColor, Wins, scores;
 
 
-PC = false;
+PC = true;
 
 numbDice = 5;
 numbPlayers = 3;

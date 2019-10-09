@@ -4,9 +4,7 @@ if !currentPlayer.AI exit
 if tweening > 0 exit
 if bustState exit
 
-if instance_exists(objGreed){
-	instance_destroy(objGreed);	
-}
+destroyGreed();
 
 if Passed{
 	var number = checkNumbFrozen();

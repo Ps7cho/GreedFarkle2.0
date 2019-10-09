@@ -30,9 +30,7 @@ if currentPlayer{
 		#region //Roll Dice
 if keyboard_check_pressed(vk_space) || device_mouse_check_button_pressed(0,mb_right){
 	if bustState{
-		if instance_exists(objGreed){
-			instance_destroy(objGreed);	
-		}
+		destroyGreed();
 		Bust1();
 		endTurn();
 		toss = 10;
@@ -86,8 +84,6 @@ if mouse_check_button(mb_left) or device_mouse_check_button(0,mb_left){
 }else{
 	exitHeld = 0;	
 }
-
-
 
 	#endregion
 

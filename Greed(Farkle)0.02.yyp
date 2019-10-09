@@ -295,6 +295,14 @@
             }
         },
         {
+            "Key": "23fdd396-15e7-4d40-8527-951fc08f228f",
+            "Value": {
+                "id": "8649560a-e2c9-4d4d-bba9-cf17e1627989",
+                "resourcePath": "scripts\\sortScores\\sortScores.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "2443a425-2f6a-4395-9266-7809fc2fba89",
             "Value": {
                 "id": "9c220c7d-7bae-4dfc-a62f-42bf371015cd",
@@ -1071,6 +1079,14 @@
             }
         },
         {
+            "Key": "9e601610-e89c-4099-a8c4-1ca0b7bec5da",
+            "Value": {
+                "id": "c7702bd2-0b66-4cf7-8c67-8c213b909b8d",
+                "resourcePath": "scripts\\destroyGreed\\destroyGreed.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "9f315122-0a60-45d0-a791-f095dba98fe2",
             "Value": {
                 "id": "c172a961-32a6-47c9-bbdd-25d9d16cca4e",
@@ -1776,7 +1792,10 @@
         "0a25f683-7686-4420-927f-67c2b11e6923",
         "1f73e0b1-a319-442b-b4d5-133fb61f0f62",
         "fab63f88-b4b7-4cb1-88bc-861af4f6f534",
-        "76a9aa43-d169-44dd-b05a-0ab3c1fbb3e6"
+        "76a9aa43-d169-44dd-b05a-0ab3c1fbb3e6",
+        "45ee6f10-c8f2-4594-8d84-fcb2fab6cbfa",
+        "23fdd396-15e7-4d40-8527-951fc08f228f",
+        "9e601610-e89c-4099-a8c4-1ca0b7bec5da"
     ],
     "tutorial": ""
 }

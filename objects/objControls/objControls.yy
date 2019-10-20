@@ -5,19 +5,19 @@
     "name": "objControls",
     "eventList": [
         {
-            "id": "9d44e4f4-c005-4a5f-9f12-b0772573dae9",
+            "id": "38113021-3403-4950-9fbd-43dbf6e388c6",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
-            "eventtype": 0,
+            "eventtype": 8,
             "m_owner": "2443a425-2f6a-4395-9266-7809fc2fba89"
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,
-    "parentObjectId": "00000000-0000-0000-0000-000000000000",
+    "parentObjectId": "d58f34c2-c86c-4d10-b938-00be2bab9e42",
     "persistent": false,
     "physicsAngularDamping": 0.1,
     "physicsDensity": 0.5,
@@ -33,6 +33,6 @@
     "physicsStartAwake": true,
     "properties": null,
     "solid": false,
-    "spriteId": "e6703018-e982-4398-bc50-26c20d232601",
+    "spriteId": "040d71a6-469b-4a4c-868e-15002d76cc31",
     "visible": true
 }

@@ -63,6 +63,14 @@
             }
         },
         {
+            "Key": "040d71a6-469b-4a4c-868e-15002d76cc31",
+            "Value": {
+                "id": "c5877ad5-f070-4530-9a87-675969069bac",
+                "resourcePath": "sprites\\sprButton\\sprButton.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "0489b1fe-d6fc-47e1-a430-7f5e00128a3b",
             "Value": {
                 "id": "97662f7f-c72f-4b68-8563-37d15649822b",

@@ -1,7 +1,7 @@
 {
     "id": "398e7485-b647-418f-8e7c-cd12553fd9ef",
     "modelName": "GMExtension",
-    "mvc": "1.0",
+    "mvc": "1.2",
     "name": "Easing_and_Tweening",
     "IncludedResources": [
         "Scripts\\ease_in_back",
@@ -50,6 +50,7 @@
     "copyToTargets": -1,
     "date": "2018-05-07 10:10:29",
     "description": "",
+    "exportToGame": true,
     "extensionName": "",
     "files": [
         
@@ -64,14 +65,18 @@
     "iosThirdPartyFrameworkEntries": [
         
     ],
+    "iosdelegatename": null,
     "iosplistinject": "",
     "license": "Free to use, also for commercial games.",
     "maccompilerflags": "",
     "maclinkerflags": "",
     "macsourcedir": "",
+    "options": null,
+    "optionsFile": "options.json",
     "packageID": "com.foreverisbetter.EasingandTweening",
     "productID": "ACBD3CFF4E539AD869A0E8E3B4B022DD",
     "sourcedir": "",
+    "supportedTargets": -1,
     "tvosProps": false,
     "tvosSystemFrameworkEntries": [
         
@@ -80,6 +85,7 @@
         
     ],
     "tvosclassname": "",
+    "tvosdelegatename": null,
     "tvosmaccompilerflags": "",
     "tvosmaclinkerflags": "",
     "tvosplistinject": "",

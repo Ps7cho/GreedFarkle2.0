@@ -111,28 +111,37 @@ if startMenu {
 		#region Lobby
 		var Play = collision_point(mouse_x,mouse_y,objPlay,false,true);
 		if Play {
-			instance_deactivate_layer("Lobby");
 			//saveLocalGame();
 			ClearRound();
-			setupPlayers(numbPlayers);
-			lobby = false;
+			if numbPlayers+numbAI > 1{
+				instance_deactivate_layer("Lobby");
+				setupPlayers(numbPlayers+numbAI);
+				lobby = false;
+			}
 		}
 		var addplayers = collision_point(mouse_x,mouse_y,objAddPlayers,false,true);
 		if addplayers {
-			numbPlayers = Approach(numbPlayers,10,1);
+			if numbPlayers+numbAI < 10 {
+				numbPlayers = Approach(numbPlayers,10,1);
+					var button = instance_create_layer(1100, 310+65*numbPlayers, "Lobby", objEditNames);	
+					ds_list_add(edit, button);	
+				
+			}
 		}
 		var removeplayers = collision_point(mouse_x,mouse_y,objRemovePlayers,false,true);
 		if removeplayers {
-			if numbAI = numbPlayers -1{
-				numbAI = Approach(numbAI,0,1);
-			}
-			numbPlayers = Approach(numbPlayers,2,1);
-			
+			numbPlayers = Approach(numbPlayers,0,1);
+				if ds_list_size(edit) >0 {
+					var button = ds_list_find_value(edit,ds_list_size(edit)-1);
+					instance_destroy(button);
+					ds_list_delete(edit,ds_list_size(edit)-1);
+				}
 		}
 		var AddAI = collision_point(mouse_x,mouse_y,objAddAI,false,true);
 		if AddAI {
-			numbPlayers = Approach(numbPlayers,10,1);
-			numbAI = Approach(numbAI,numbPlayers-1,1);
+			if numbPlayers+numbAI < 10 {
+				numbAI = Approach(numbAI,10,1);
+			}
 		}
 		var RemoveAI = collision_point(mouse_x,mouse_y,objRemoveAI,false,true);
 		if RemoveAI {
@@ -151,17 +160,6 @@ if startMenu {
 			var button = Edit.id;
 			pos = ds_list_find_index(edit, button);
 			keyboard_string = string(ds_list_find_value(playerNames,pos));
-		}
-		if lobby{
-			var size = (numbPlayers-numbAI);
-			if size > Humans{
-				var button = instance_create_layer(1100, 310+65*size, "Lobby", objEditNames);	
-				ds_list_add(edit, button);	
-			}else if size < Humans{
-				instance_destroy(ds_list_find_value(edit,ds_list_size(edit)-1));
-				ds_list_delete(edit,ds_list_size(edit)-1);
-			}
-			Humans = size;
 		}
 		#endregion
 		#region Options Menu

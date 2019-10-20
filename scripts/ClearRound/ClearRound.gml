@@ -5,5 +5,6 @@ with(objPlayer){
 	instance_destroy(self);	
 }
 
+
 Win = noone;
 

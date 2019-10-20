@@ -35,8 +35,7 @@ if keyboard_check_pressed(vk_space) || device_mouse_check_button_pressed(0,mb_ri
 		endTurn();
 		toss = 10;
 		bustState = false;
-	}
-	if !currentPlayer.AI {
+	}else if !currentPlayer.AI {
 		rollStart();
 	}
 }
@@ -102,15 +101,28 @@ if AiChooseTurn == 0{
 			
 			#endregion
 		#region Timers
-if bustTimer1 == 0{
-	Bust1();
-}
-if bustTimer2 == 0{
-	reset();
-	endTurn();
-}
+		
 if SwitchPlayersTimer == 0{
 	SwitchPlayers();
+}
+
+if !SwitchPlayersTimer > 0{
+	
+	if bustTimer0 == 0{
+		var b =checkBust();
+		if b {
+			bust();	
+		}
+	}
+	if !bustState {
+		if bustTimer1 == 0{
+			Bust1();
+		}
+		if bustTimer2 == 0{
+			reset();
+			endTurn();
+		}
+	}
 }
 if RPscaleModify > 1{
 	RPscaleModify -= 0.05;	
@@ -129,6 +141,7 @@ if midTurnToss == 0{
 midTurnToss --;
 SwitchPlayersTimer --;
 toss --;
+bustTimer0 --;
 bustTimer1 --;
 bustTimer2 --;
 

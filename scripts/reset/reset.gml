@@ -10,7 +10,4 @@ with(ObjDice){
 numbFrozen = 0;
 
 
-var b = checkBust();
-if b {
-	bust();	
-}
+bustTimer0 = 35;

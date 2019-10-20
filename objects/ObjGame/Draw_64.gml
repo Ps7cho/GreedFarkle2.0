@@ -6,7 +6,7 @@ draw_set_valign(fa_center);
 draw_set_font(fnt_HighwindLarge);
 				#region Win scoreboard
 if Win != noone{
-	var size = ds_map_size(Wins);
+	var size = ds_list_size(WonPoints);
 	
 	draw_set_alpha(0.5);
 	draw_rectangle_color((room_width/8),46,(room_width/8)*7,((room_height/12)+size*70)-Margin ,c_black,c_black,c_black,c_black,false);
@@ -14,10 +14,11 @@ if Win != noone{
 	draw_set_alpha(1);
 	
 	for (var i= 0; i<size; i++){
-		 var this = ds_list_find_value(scores,i);
-		 var guy = ds_map_find_value(Wins,this);
-		 draw_set_color(guy.color);
-		draw_text(xx, (room_height/12)+i*70, string(guy.name) + " finished with " + string(this)  + " points!" );
+		var points = ds_list_find_value(WonPoints,i);
+		var name = ds_list_find_value(WonNames,i);
+		var color = ds_list_find_value(WonColors,i);
+		draw_set_color(color);
+		draw_text(xx, (room_height/12)+i*70, string(name) + " finished with " + string(points)  + " points!" );
 	}
 	
 }
@@ -29,9 +30,9 @@ if Win != noone{
 					draw_text(400,550,string(server.startLobby));
 				}
 if lobby {
-	for (var i =0; i<numbPlayers-numbAI; i++;){
+	for (var i =0; i<numbPlayers; i++;){
 		draw_set_color(colors[| i]);
-		draw_text(1100, 360+65*i,playerNames[|i]); //this will make them backwards 
+		draw_text(1100, 410+65*i,playerNames[|i]); //this will make them backwards 
 		
 	}
 }
@@ -65,12 +66,12 @@ draw_set_alpha(1);
 			#region Tweening
 if tweening > 0 {
 	x3 = lerp(x3,room_width/2,0.06); //Next player --> center
-	if numbPlayers == 2{
+	if numbPlayers+numbAI == 2{
 		x1 = lerp(x1,(room_width/6)*5,0.06); //Current player --> Right(next)
-	}else if numbPlayers > 2{
+	}else if numbPlayers+numbAI > 2{
 		x1 = lerp(x1,room_width/6,0.06); //Current player --> Left(Prev)
 	}
-	if (numbPlayers = 3){
+	if (numbPlayers+numbAI = 3){
 		x2 = lerp(x2,(room_width/6)*5,0.06);// Previous player --> Next Player
 	}else{
 		x2 = lerp(x2,(x2 - 600),0.06);// Previous player --> off the board
@@ -139,7 +140,7 @@ draw_text(xx3, y3, nextPlayer.points);
 #endregion
 
 				#region Previous Player
-if numbPlayers > 2{
+if numbPlayers+numbAI > 2{
 	draw_set_color(textColor);
 	draw_text(xx2, y1, "Previous");
 	draw_set_color(lastPlayer.color);

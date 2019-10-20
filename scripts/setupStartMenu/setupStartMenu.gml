@@ -21,7 +21,7 @@ instance_create_layer(300, 500, "Lobby", objPlay);
 
 instance_create_layer(300, 200, "EditRoom", objDone);
 edit = ds_list_create();
-for (var i = 1; i<=Humans; i++;){
+for (var i = 1; i<=numbPlayers; i++;){
 	var button = instance_create_layer(1100, 310+65*i, "Lobby", objEditNames);	
 	ds_list_add(edit, button);
 }

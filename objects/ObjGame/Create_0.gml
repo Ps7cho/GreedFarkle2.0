@@ -8,9 +8,8 @@ block, currentPlayer, startMenu, OptionMenu, Setup, Name, WinnerColor, textColor
 PC = true;
 
 numbDice = 5;
-numbPlayers = 3;
+numbPlayers = 1;
 numbAI = 2;
-Humans = numbPlayers-numbAI;
 Points = 0;
 roundPoints = 0;
 threshold = 400;
@@ -35,14 +34,18 @@ bustState = false;
 Win = noone;
 Wins = ds_map_create();
 scores = ds_list_create();
+WonNames = ds_list_create();
+WonColors = ds_list_create();
+WonPoints = ds_list_create();
 AISelectPoints = -1;
 AiChooseTurn = -1;
+bustTimer0 = -1
 bustTimer1 = -1;
 bustTimer2 = -1;
 SwitchPlayersTimer = -1;
 save = ds_list_create();
 
-AISelectTime = 30; // between turns
+AISelectTime = 60; // between turns
 wait = 80;		// during turn
 toss = 0; //this is for roll animation timer.
 midTurnToss = 0;
@@ -91,7 +94,7 @@ exitHeld = 0;
 saveLocalGame();
 }
 */
-Humans = numbPlayers-numbAI;
+
 
 setupStartMenu();
 

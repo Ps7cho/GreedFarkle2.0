@@ -1,6 +1,6 @@
 startMenu = false;
 var totalPlayers = argument0;
-var players = numbPlayers-numbAI; 
+var players = numbPlayers; 
 Points = 0;
 AISelectPoints = 60;
 
@@ -17,7 +17,7 @@ for (var i=0; i<totalPlayers; i++){
 	}else{
 		player.AI = true;
 		player.color = c_ltgray;
-		player.name = "Computer" + "AI"+ string(i);
+		player.name = "Computer" + string(i);
 	}
 	ds_list_add(playerList,player);
 	ds_list_add(scores,player);	

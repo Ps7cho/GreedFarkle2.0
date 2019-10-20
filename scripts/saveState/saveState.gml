@@ -10,7 +10,7 @@ ds_map_add(saveMap, 17, winningTotal);
 ds_map_add(saveMap, 18, currentPlayer);
 
 
-for (var i=0; i < numbPlayers; i++){
+for (var i=0; i < numbPlayers+numbAI; i++){
 	saveMap[? i+11] = currentPlayer.name;
 	saveMap[? i+11] = currentPlayer.points;
 	saveMap[? i+11] = currentPlayer.color;

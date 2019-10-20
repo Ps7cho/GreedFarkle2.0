@@ -26,4 +26,4 @@ destroyGreed();
 
 sortScores();
 
-saveState();
+//saveState();

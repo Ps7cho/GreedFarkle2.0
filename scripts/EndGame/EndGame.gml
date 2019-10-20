@@ -11,12 +11,16 @@ with objPlayer {
 
 if Won {
 	Win = true;
-	with (objPlayer){
-		ds_map_add(Wins,points,id);
-		ds_list_add(scores,points);
+
+	for (i = 0; i < ds_list_size(scores); i++){
+		var guy = ds_list_find_value(scores,i);
+		ds_list_add(WonPoints,guy.points);
+		ds_list_add(WonNames,guy.name);
+		ds_list_add(WonColors,guy.color);
+	
 	}
 	audio_play_sound(Electro_win_sound,1,false);
-	ds_list_sort(scores,false);
+
 }else{
 	ClearRound();	
 }

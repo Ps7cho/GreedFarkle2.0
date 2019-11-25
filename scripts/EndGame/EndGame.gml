@@ -11,7 +11,11 @@ with objPlayer {
 
 if Won {
 	Win = true;
-
+	
+	ds_list_clear(WonPoints);
+	ds_list_clear(WonNames);
+	ds_list_clear(WonColors);
+	
 	for (i = 0; i < ds_list_size(scores); i++){
 		var guy = ds_list_find_value(scores,i);
 		ds_list_add(WonPoints,guy.points);
@@ -28,6 +32,12 @@ if Won {
 Passed = false;
 pass = false;
 PassState = false;
+midTurnToss			= -1;
+SwitchPlayersTimer	= -1;
+toss				= -1;
+bustTimer0			= -1;
+bustTimer1			= -1;
+bustTimer2			= -1;
 instance_deactivate_object(objPass);
 
 if instance_exists(objFresh){

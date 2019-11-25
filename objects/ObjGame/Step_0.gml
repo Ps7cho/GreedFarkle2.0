@@ -43,9 +43,11 @@ if keyboard_check_pressed(vk_space) || device_mouse_check_button_pressed(0,mb_ri
  #endregion
 		#region Click on dice
 if mouse_check_button_pressed(mb_left) || device_mouse_check_button_pressed(0,mb_left){
+	if bustTimer0 < 0{
 		if !currentPlayer.AI {
 			ClickOnDice(); 
 		}
+	}
 }
 #endregion
 		#region buttons

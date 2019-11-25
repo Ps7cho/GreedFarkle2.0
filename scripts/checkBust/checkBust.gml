@@ -9,6 +9,7 @@ with ObjDice{
 	}
 }
 ds_list_sort(newHand,true);
+var size = ds_list_size(newHand);
 
 straight = scrCheckStraight(newHand);
 if straight {

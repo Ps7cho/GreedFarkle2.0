@@ -6,7 +6,7 @@ with(ObjDice){
 	locked = false;
 	giveValue(id);
 }
-
+UpdateDicePosition();
 numbFrozen = 0;
 
 

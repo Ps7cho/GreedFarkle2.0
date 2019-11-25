@@ -1,8 +1,8 @@
 {
-    "id": "3805766f-7265-4e66-8fad-68fe4d189dbc",
+    "id": "a6e1c276-8b39-4fda-be60-b493117adaa6",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "saveLocalGame",
+    "name": "SaveStringToFile",
     "IsCompatibility": false,
     "IsDnD": false
 }

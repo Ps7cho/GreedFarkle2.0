@@ -9,6 +9,8 @@ if block {
 	block = false;	
 }
 Passed = false;
+PassState = false;
+passedHand = false;
 if instance_exists(objFresh){
 	instance_destroy(objFresh);	
 }

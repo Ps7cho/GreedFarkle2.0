@@ -27,6 +27,7 @@ if Won {
 
 Passed = false;
 pass = false;
+PassState = false;
 instance_deactivate_object(objPass);
 
 if instance_exists(objFresh){
@@ -40,6 +41,9 @@ destroyGreed();
 
 ds_list_clear(playerList);
 ds_list_clear(Hand);
+
+AiChooseTurn = -1;
+AISelectPoints = -1;
 
 Points = 0;
 roundPoints = 0;

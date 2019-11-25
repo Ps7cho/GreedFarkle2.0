@@ -43,6 +43,7 @@ for (var i=0; i<numbDice; i++) {
 	ID.Counted = false;
 	
 }
+UpdateDicePosition();
 Win = noone;
 
 instance_activate_layer("Top");

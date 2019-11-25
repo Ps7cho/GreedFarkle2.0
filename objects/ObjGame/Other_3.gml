@@ -1,5 +1,5 @@
 /// @description 
-saveLocalGame();
+saveState();
 
 ds_list_destroy(playerList);
 ds_list_destroy(playerNames);

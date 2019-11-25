@@ -4,7 +4,7 @@ if startMenu {
 		var back = collision_point(mouse_x,mouse_y,objBack,false,true);
 		if back {
 			DeactivateAllLayers();
-			//saveLocalGame();
+			saveState();
 			
 			if back = OptionsBack{
 				instance_activate_layer("Start");
@@ -111,7 +111,7 @@ if startMenu {
 		#region Lobby
 		var Play = collision_point(mouse_x,mouse_y,objPlay,false,true);
 		if Play {
-			//saveLocalGame();
+			saveState();
 			ClearRound();
 			if numbPlayers+numbAI > 1{
 				instance_deactivate_layer("Lobby");
@@ -191,7 +191,7 @@ if startMenu {
 		}
 		var removedie= collision_point(mouse_x,mouse_y,objRemoveDice,false,true);
 		if removedie {
-			numbDice = Approach(numbDice,5,1);
+			numbDice = Approach(numbDice,1,1);
 		}
 		var ThresholdUp = collision_point(mouse_x,mouse_y,objThresholdUp,false,true);
 		if ThresholdUp {

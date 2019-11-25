@@ -34,6 +34,8 @@ with ObjDice{
 		ds_list_add(other.run,self.value);
 	}
 }
+
+PassState = false;
 addPoints(run);
 ds_list_destroy(run);
 

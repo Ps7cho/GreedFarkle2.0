@@ -5,4 +5,7 @@ audio_play_sound(Woosh,10,false);
 
 Passed = true;
 pass = true;
+PassState = true;
+passedHand = true;
+
 endTurn();

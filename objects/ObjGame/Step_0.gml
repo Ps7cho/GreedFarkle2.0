@@ -35,6 +35,7 @@ if keyboard_check_pressed(vk_space) || device_mouse_check_button_pressed(0,mb_ri
 		endTurn();
 		toss = 10;
 		bustState = false;
+		PassState = false;
 	}else if !currentPlayer.AI {
 		rollStart();
 	}
@@ -90,11 +91,9 @@ if mouse_check_button(mb_left) or device_mouse_check_button(0,mb_left){
 		#region AI Mind
 if AISelectPoints == 0{
 	AIGrabPoints();
-		
 }
 if AiChooseTurn == 0{
 	AIPassOrRoll();
-		
 }
 	AiChooseTurn --;
 	AISelectPoints --;

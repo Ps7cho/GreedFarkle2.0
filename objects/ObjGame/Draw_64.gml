@@ -20,7 +20,6 @@ if Win != noone{
 		draw_set_color(color);
 		draw_text(xx, (room_height/12)+i*70, string(name) + " finished with " + string(points)  + " points!" );
 	}
-	
 }
 			#endregion
 				#region Lobby
@@ -87,7 +86,7 @@ if tweening > 0 {
 			#endregion
 
 
-				#region  Current Player
+				#region Current Player
 				
 draw_set_color(currentPlayer.color);
 draw_text(xx, y1, "Current Player");
@@ -103,11 +102,14 @@ draw_text(xx, y3, currentPlayer.points);
 
 
 draw_set_color(Blue);
+if PassState {
+	draw_text_transformed(xx, y6, roundPoints,scale*RPscaleModify*2,scale*RPscaleModify*2,0);
+}else{
+	draw_text_transformed(xx, y5, roundPoints,scale*RPscaleModify,scale*RPscaleModify,0);
 
-draw_text_transformed(xx, y5, roundPoints,scale*RPscaleModify,scale*RPscaleModify,0);
-
-draw_set_color(Green);
-draw_text(xx, y6, Points);
+	draw_set_color(Green);
+	draw_text(xx, y6, Points);
+}
 #endregion
 				#region Tutorial 
 			if Tutorial{
@@ -123,7 +125,7 @@ draw_text(xx, y6, Points);
 			#endregion
 
 
-				#region  Next Player
+				#region Next Player
 
 draw_set_color(textColor);
 draw_text(xx3, y1, "Up Next");

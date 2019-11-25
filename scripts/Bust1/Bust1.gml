@@ -10,7 +10,8 @@ with (ObjDice){
 	frozen = false;
 	locked = false;
 }
-
+passedHand = false;
+UpdateDicePosition();
 with ObjDice{
 	image_speed = 500;
 }

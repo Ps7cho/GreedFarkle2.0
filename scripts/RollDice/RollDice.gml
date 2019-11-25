@@ -40,6 +40,13 @@
 	if block {
 		block = false;	
 	}
+	if PassState{
+		if !b{
+			PassState = false;
+		}
+	}
 	if Passed {
 		Passed = false;	
 	}
+	
+	UpdateDicePosition();

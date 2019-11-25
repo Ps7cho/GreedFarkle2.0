@@ -4,6 +4,7 @@
 			with ObjDice{
 				image_speed = 500;
 			}
+			passedHand = false;
 		}
 		if numbFrozen < number {
 			midTurnToss = 5;

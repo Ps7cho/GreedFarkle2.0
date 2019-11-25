@@ -5,7 +5,7 @@ var die = collision_point(mouse_x,mouse_y,ObjDice,false,true);
 if die {
 	die.sparkle = irandom(4);//change the sparkle sprite that playes
 	if !die.frozen && !Passed {
-			
+		PassState = false;
 		if checkForPoints(die) {
 			die.frozen = true;
 			die.time = 0;
@@ -32,7 +32,6 @@ if die {
 	}
 	addPoints(run);
 	ds_list_destroy(run);
-			
 	device_mouse_dbclick_enable(false);
 	alarm[0] = 18; //double tap timer
 }

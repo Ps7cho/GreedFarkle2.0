@@ -17,7 +17,7 @@ with ObjDice{
 		Counted = true;
 	}
 }
-
+UpdateDicePosition();
 
 tweening = 30;
 SwitchPlayersTimer = 35; //switch players

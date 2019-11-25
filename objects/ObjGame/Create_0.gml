@@ -5,7 +5,7 @@ globalvar numbDice, numbFrozen, numbPlayers, numbAI, Points, roundPoints, thresh
 block, currentPlayer, startMenu, OptionMenu, Setup, Name, WinnerColor, textColor, Wins, scores;
 
 
-PC = true;
+PC = false;
 
 numbDice = 5;
 numbPlayers = 1;
@@ -30,6 +30,7 @@ scrColorPalette();
 
 Passed = false;
 pass = true;
+PassState = false;
 bustState = false;
 Win = noone;
 Wins = ds_map_create();
@@ -49,6 +50,7 @@ AISelectTime = 60; // between turns
 wait = 80;		// during turn
 toss = 0; //this is for roll animation timer.
 midTurnToss = 0;
+passedHand = false;
 
 playerList = ds_list_create();
 playerNames = ds_list_create();
@@ -88,12 +90,12 @@ y6 = 330+Margin;
 
 exitHeld = 0;
 
-/*if file_exists("Save1.ini"){
+if file_exists("savegame.sav"){
 	loadLocalGame();
 }else{
-saveLocalGame();
+	saveState();
 }
-*/
+
 
 
 setupStartMenu();
